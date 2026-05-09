@@ -36,7 +36,7 @@ a{
 }
 
 .main-text{
-	width: 640px;
+	width: 100%;
 	margin: auto;
 	border: 1px solid red;
 	text-align: center;
@@ -81,28 +81,26 @@ a{
 
 
 .about{
-width: 690px;
+width: 80%;
 border: 2px solid pink;
-margin-left: 148px;
+margin-left: 10%;
 margin-top: 92px;
 }
 
 
 .main-title2{
-width: 690px ;
-height: 58px ;
+width: 100% ;
 border: 2px solid lime;
 margin: auto;
 /*КОМБО ДЛЯ ЛЮБОГО ТЕКСТА*/
-font-size: 54px;
+font-size: clamp(2rem, 1.5417rem + 2.2917vw, 3.375rem);
 font-weight: 400;
 line-height: 58px;
 margin-bottom: 44px;
 }
 
 .main-text2{
-width: 690px;
-height: 208px;
+width: 100%;
 border: 2px solid blue;
 margin: auto;
 /*КОМБО ДЛЯ ЛЮБОГО ТЕКСТА*/
@@ -113,7 +111,7 @@ margin-bottom: 33px;
 }
 
 .facts{
-width: 690px;
+width: 100%;
 height: 90px;
 border: 1px solid blue;
 margin: auto;
@@ -127,22 +125,22 @@ margin-bottom: 0px;
 
 
 .gallery{
-width: 1184px;
+width: 70%;
 border: 2px solid lime;
 margin: auto;
 margin-top: 92px;
 display: grid; /*сетки*/
-grid-template-columns: 1fr 1fr 1fr 1fr ;
-grid-template-rows: 1fr 1 fr 1fr;
 gap: 16px;
+grid-template-columns: repeat(auto-fill, minmax(230px, 1fr))
 
 }
 
 .places{
-border: 2px solid yellow;
-margin: auto;
-margin-bottom: 92px;
-margin-top: 92px;
+	width: 70%;
+	border: 2px solid yellow;
+	margin: auto;
+	margin-bottom: 92px;
+	margin-top: 92px;
 }
 
 .place{
@@ -151,22 +149,24 @@ margin-top: 92px;
 	display: flex;
 	/* ценровка эл-ов */
 	justify-content: space-around;
-	align-items: center;
+	align-items: flex-start;
 	margin-top: 80px;
 	gap: 20px;
 }
 
 
 .place-title{
+	width: 35%;
 	margin: 0;
-	font-size:72px ;
 	font-weight: 900;
 	line-height:76px;
 	margin-bottom:48px ;
+	font-size: clamp(2rem, 1.1667rem + 4.1667vw, 4.5rem);
 }
 .place-image{
 	margin: 0;
 	width: 35vw;
+
 }
 
 
@@ -178,7 +178,6 @@ margin-top: 92px;
 	color: #AAAAAA;
 	letter-spacing: 2px;
 	margin-top: 106px;
-	margin-bottom: 12px;
 }
 
 .place-link{
@@ -189,17 +188,27 @@ margin-top: 92px;
 	color: white;
 }
 
-.place-text{
+.place-text1{
 	margin: 0;
-	font-size: 18px;
 	font-weight: 400;
 	line-height: 163%;
 	color: white ;
-	margin-top: 38px;
+	margin-top: 48px;
+	font-size: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);
+}
+
+.place-text2{
+	margin: 0;
+	font-weight: 400;
+	line-height: 163%;
+	color: white ;
+	margin-top: 26px;
+	font-size: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);
 }
 
 .baikal{
-width: 1184px;
+width: 100%;
+height: 70vh;
 border: 2px solid aqua;
 margin: auto;
 background: url("image2.png");
@@ -208,18 +217,19 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+background-size:cover ;
+backdrop-position:center ;
 }
 
 .baikal-title{
 margin: 0;
 position: relative;
 z-index: 2;
-font-size: 72px;
+font-size: clamp(2rem, 1.275rem + 3.625vw, 5.625rem);
 font-weight: 900px;
 line-height: 76px;
-width: 560px;
 border: 1px solid red;
-mergin-bottom: 32px;
+margin-bottom: 32px;
 text-align: center;
 transition: 2s;
 }
@@ -238,11 +248,12 @@ transform: rotate(90deg);
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 22px;
+	font-size: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);
 }
 
 .overlay{
-	width: 1184px;
-	height: 740px;
+	width: 100%;
+	height: 100%;
 	background: black;
 	position: absolute;
 	top: 0;
@@ -258,8 +269,7 @@ transform: rotate(90deg);
 }
 
 .footer{
-width: 1184px;	
-height: 18px;
+width: 100%;	
 border: 2px solid orange;
 margin: auto;
 display: flex;
@@ -271,28 +281,11 @@ margin-top: 92px;
 @media(max-width: 1280px ) {
 	
 
-	
-
-	.gallery{
-		width: 928px;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
-		gap: 14px;
-	}
-
-	.gallery-image{
-		width: 300px;
-		height: 225px;
-	}
 	.baikal{
-		width: 	1024px;
+		height: 50vh;
 	}
-	.overlay{
-		width: 	1024px;
-	}
-	.footer	{
-		width: 	928px;
-	}
+
+
 
 }
 
@@ -300,17 +293,7 @@ margin-top: 92px;
 
 
 
-	.gallery{
-		width: 720px;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-		gap: 16px;
-	}
 
-	.gallery-image{
-		width: 352px;
-		height: 264px;
-	}
 
 	.place-hint{
 		margin-top: 0;
@@ -318,17 +301,11 @@ margin-top: 92px;
 
 
 
-	.baikal{
-		width: 768px;
-	}
 
-	.overlay{
-		width: 768px;
-	}
 
-	.footer{
-		width: 720px;
-	}
+
+
+
 }
 
 
@@ -341,11 +318,12 @@ margin-top: 92px;
 	.main-title{
 		line-height: 44px;
 	}
-	.main-text{
-		line-height: 20px;
-	}
+
 	.place{
 		flex-direction: column;
+	}
+		.baikal{
+		height: 30vh;
 	}
 	.footer{
 		flex-direction: column;
